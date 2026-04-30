@@ -9,8 +9,17 @@ name: Publish to npm
 #        - dry_run=true (default): runs full pipeline + `npm publish --dry-run`
 #        - dry_run=false: runs full pipeline + actual `npm publish`
 #
-# Auth: requires the `NPM_TOKEN` repo secret. Provenance is automatic
-# via GitHub OIDC (`id-token: write` permission below).
+# Auth: uses npm Trusted Publishing (OIDC) — no NPM_TOKEN secret needed.
+# The matching trusted-publisher entry on npmjs.com is configured at
+#   https://www.npmjs.com/package/@savantoai/ai-sdk/access
+# pointing at this repo + this workflow file. The `id-token: write`
+# permission below lets GitHub mint the OIDC token npm uses to verify
+# the publish came from this workflow. Provenance attestations also
+# flow through the same OIDC token.
+#
+# If npm ever rejects the publish with "OIDC token verification failed",
+# re-check the trusted-publisher entry's `repository` + `workflow_filename`
+# fields match this workflow exactly (case-sensitive).
 
 on:
   push:
@@ -41,8 +50,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
+          # registry-url is still required so `npm publish` knows where
+          # to push. `scope` is intentionally omitted — it only affects
+          # token-based auth, which we no longer use.
           registry-url: 'https://registry.npmjs.org'
-          scope: '@savantoai'
 
       - name: Verify package.json version matches git tag
         if: startsWith(github.ref, 'refs/tags/v')
@@ -73,12 +84,8 @@ jobs:
 
       - name: Publish to npmjs (dry run)
         if: github.event_name == 'workflow_dispatch' && inputs.dry_run == 'true'
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm publish --provenance --access public --dry-run
 
       - name: Publish to npmjs
         if: startsWith(github.ref, 'refs/tags/v') || (github.event_name == 'workflow_dispatch' && inputs.dry_run == 'false')
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm publish --provenance --access public
