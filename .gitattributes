@@ -1,0 +1,21 @@
+# Normalize line endings
+* text=auto
+
+# TypeScript
+*.ts text eol=lf
+
+# JavaScript
+*.js text eol=lf
+*.mjs text eol=lf
+*.cjs text eol=lf
+
+# JSON
+*.json text eol=lf
+
+# Markdown
+*.md text eol=lf
+
+# Config files
+*.yaml text eol=lf
+*.yml text eol=lf
+

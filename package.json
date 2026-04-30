@@ -1,0 +1,76 @@
+{
+  "name": "@savantoai/ai-sdk",
+  "version": "2.1.0",
+  "description": "Official JavaScript/TypeScript SDK for Savanto AI — search, chat, recommendations, and knowledge base management",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:integration": "vitest run --config vitest.integration.config.ts",
+    "test:all": "vitest run && vitest run --config vitest.integration.config.ts",
+    "lint": "biome lint src",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "savanto",
+    "ai",
+    "search",
+    "chat",
+    "e-commerce",
+    "semantic-search",
+    "recommendations",
+    "typescript",
+    "sdk"
+  ],
+  "author": "Savanto",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SavantoAI/ai-sdk-js.git"
+  },
+  "homepage": "https://savanto.ai",
+  "bugs": {
+    "url": "https://github.com/SavantoAI/ai-sdk-js/issues"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@hey-api/client-fetch": "^0.13.1",
+    "@hey-api/openapi-ts": "^0.94.5",
+    "@types/node": "^20.10.0",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^8.56.0",
+    "tsdown": "^0.16.0",
+    "typescript": "^5.3.3",
+    "vitest": "^3.2.4"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
