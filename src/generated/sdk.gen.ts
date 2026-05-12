@@ -2,9 +2,9 @@
 
 import type { Client, Options as Options2, TDataShape } from './client';
 import { client } from './client.gen';
-import type { AdminClaimTenantData, AdminClaimTenantErrors, AdminClaimTenantResponses, AdminDeleteTenantData, AdminDeleteTenantErrors, AdminDeleteTenantResponses, AdminFindByEmailData, AdminFindByEmailErrors, AdminFindByEmailResponses, AdminFindByOwnerData, AdminFindByOwnerErrors, AdminFindByOwnerResponses, AdminGetTenantData, AdminGetTenantErrors, AdminGetTenantResponses, AdminGetUsageData, AdminGetUsageErrors, AdminGetUsageResponses, AdminReactivateTenantData, AdminReactivateTenantErrors, AdminReactivateTenantResponses, AdminResetCrawlsData, AdminResetCrawlsErrors, AdminResetCrawlsResponses, AdminUpdateOwnerEmailData, AdminUpdateOwnerEmailErrors, AdminUpdateOwnerEmailResponses, AdminUpdateSubscriptionData, AdminUpdateSubscriptionErrors, AdminUpdateSubscriptionResponses, AdminUpdateTierData, AdminUpdateTierErrors, AdminUpdateTierResponses, AdminUpdateUsageData, AdminUpdateUsageErrors, AdminUpdateUsageResponses, BulkDeletePostsData, BulkDeletePostsErrors, BulkDeletePostsResponses, BulkDeleteProductsData, BulkDeleteProductsErrors, BulkDeleteProductsResponses, BulkDeletePromptsData, BulkDeletePromptsErrors, BulkDeletePromptsResponses, BulkDeleteTaxonomiesData, BulkDeleteTaxonomiesErrors, BulkDeleteTaxonomiesResponses, BulkDeleteThreadsData, BulkDeleteThreadsErrors, BulkDeleteThreadsResponses, BulkUpdateWebhookStatusData, BulkUpdateWebhookStatusErrors, BulkUpdateWebhookStatusResponses, BulkUpsertPostsData, BulkUpsertPostsErrors, BulkUpsertPostsResponses, BulkUpsertProductsData, BulkUpsertProductsErrors, BulkUpsertProductsResponses, BulkUpsertPromptsData, BulkUpsertPromptsErrors, BulkUpsertPromptsResponses, BulkUpsertTaxonomiesData, BulkUpsertTaxonomiesErrors, BulkUpsertTaxonomiesResponses, CancelCrawlData, CancelCrawlErrors, CancelCrawlResponses, ChatData, ChatErrors, ChatResponses, ClearDomainErrorsData, ClearDomainErrorsErrors, ClearDomainErrorsResponses, CommitSearchData, CommitSearchErrors, CommitSearchResponses, CreateApiKeyData, CreateApiKeyErrors, CreateApiKeyResponses, CreateCustomDomainData, CreateCustomDomainErrors, CreateCustomDomainResponses, CreateTenantWorkspaceData, CreateTenantWorkspaceErrors, CreateTenantWorkspaceResponses, CreateWebhookData, CreateWebhookErrors, CreateWebhookResponses, DeleteCredentialsData, DeleteCredentialsErrors, DeleteCredentialsResponses, DeleteCustomDomainData, DeleteCustomDomainErrors, DeleteCustomDomainResponses, DeleteFeedbackData, DeleteFeedbackErrors, DeleteFeedbackResponses, DeleteLiveAgentScheduleData, DeleteLiveAgentScheduleErrors, DeleteLiveAgentScheduleResponses, DeleteMcpConfigData, DeleteMcpConfigErrors, DeleteMcpConfigResponses, DeletePostData, DeletePostErrors, DeletePostResponses, DeletePostsByQueryData, DeletePostsByQueryErrors, DeletePostsByQueryResponses, DeleteProductData, DeleteProductErrors, DeleteProductResponses, DeleteProductsByQueryData, DeleteProductsByQueryErrors, DeleteProductsByQueryResponses, DeletePromptData, DeletePromptErrors, DeletePromptResponses, DeleteTaxonomiesByQueryData, DeleteTaxonomiesByQueryErrors, DeleteTaxonomiesByQueryResponses, DeleteTaxonomyData, DeleteTaxonomyErrors, DeleteTaxonomyResponses, DeleteTenantData, DeleteTenantErrors, DeleteTenantResponses, DeleteThreadData, DeleteThreadErrors, DeleteThreadResponses, DeleteWebhookData, DeleteWebhookErrors, DeleteWebhookResponses, DeleteWorkspaceData, DeleteWorkspaceErrors, DeleteWorkspaceResponses, DeprovisionData, DeprovisionErrors, DeprovisionResponses, DiscoverToolsData, DiscoverToolsErrors, DiscoverToolsResponses, EndHandoffData, EndHandoffErrors, EndHandoffResponses, ExportThreadsData, ExportThreadsErrors, ExportThreadsResponses, GenerateDomainConfigData, GenerateDomainConfigErrors, GenerateDomainConfigResponses, GetAnalyticsFeedbackData, GetAnalyticsFeedbackErrors, GetAnalyticsFeedbackResponses, GetChatAnalyticsData, GetChatAnalyticsErrors, GetChatAnalyticsResponses, GetChatWidgetConfigData, GetChatWidgetConfigErrors, GetChatWidgetConfigResponses, GetCrawlConfigData, GetCrawlConfigErrors, GetCrawlConfigResponses, GetCrawlHistoryData, GetCrawlHistoryErrors, GetCrawlHistoryResponses, GetCrawlStatusData, GetCrawlStatusErrors, GetCrawlStatusResponses, GetCredentialStatusData, GetCredentialStatusErrors, GetCredentialStatusResponses, GetDomainErrorsData, GetDomainErrorsErrors, GetDomainErrorsResponses, GetDomainErrorSummaryData, GetDomainErrorSummaryErrors, GetDomainErrorSummaryResponses, GetDomainTemplatesData, GetDomainTemplatesErrors, GetDomainTemplatesResponses, GetFeedbackAnalyticsData, GetFeedbackAnalyticsErrors, GetFeedbackAnalyticsResponses, GetKnowledgeData, GetKnowledgeErrors, GetKnowledgeResponses, GetLiveAgentScheduleData, GetLiveAgentScheduleErrors, GetLiveAgentScheduleResponses, GetLiveAgentStatusData, GetLiveAgentStatusErrors, GetLiveAgentStatusResponses, GetMcpConfigData, GetMcpConfigErrors, GetMcpConfigResponses, GetPostData, GetPostErrors, GetPostResponses, GetProductData, GetProductErrors, GetProductRecommendationsData, GetProductRecommendationsErrors, GetProductRecommendationsResponses, GetProductResponses, GetPromptData, GetPromptErrors, GetPromptResponses, GetSearchAnalyticsData, GetSearchAnalyticsErrors, GetSearchAnalyticsResponses, GetSearchWidgetConfigData, GetSearchWidgetConfigErrors, GetSearchWidgetConfigResponses, GetTaxonomyData, GetTaxonomyErrors, GetTaxonomyResponses, GetTenantStatusData, GetTenantStatusErrors, GetTenantStatusResponses, GetTenantUsageData, GetTenantUsageErrors, GetTenantUsageHistoryData, GetTenantUsageHistoryErrors, GetTenantUsageHistoryResponses, GetTenantUsageResponses, GetThreadAnalyticsData, GetThreadAnalyticsErrors, GetThreadAnalyticsResponses, GetThreadData, GetThreadErrors, GetThreadFeedbackData, GetThreadFeedbackErrors, GetThreadFeedbackResponses, GetThreadMessagesData, GetThreadMessagesErrors, GetThreadMessagesResponses, GetThreadResponses, GetUploadUrlData, GetUploadUrlErrors, GetUploadUrlResponses, GetWebhookData, GetWebhookErrors, GetWebhookResponses, GetWebhookStatsData, GetWebhookStatsErrors, GetWebhookStatsResponses, GetWorkspaceDetailsData, GetWorkspaceDetailsErrors, GetWorkspaceDetailsResponses, GetWorkspaceSettingsData, GetWorkspaceSettingsErrors, GetWorkspaceSettingsResponses, ListApiKeysData, ListApiKeysErrors, ListApiKeysResponses, ListCustomDomainsData, ListCustomDomainsErrors, ListCustomDomainsResponses, ListFeedbackData, ListFeedbackErrors, ListFeedbackResponses, ListPostIdsData, ListPostIdsErrors, ListPostIdsResponses, ListProductIdsData, ListProductIdsErrors, ListProductIdsResponses, ListProductsData, ListProductsErrors, ListProductsResponses, ListPromptsData, ListPromptsErrors, ListPromptsResponses, ListSlackChannelsData, ListSlackChannelsErrors, ListSlackChannelsResponses, ListTaxonomiesData, ListTaxonomiesErrors, ListTaxonomiesResponses, ListTaxonomyIdsData, ListTaxonomyIdsErrors, ListTaxonomyIdsResponses, ListTenantWorkspacesData, ListTenantWorkspacesErrors, ListTenantWorkspacesResponses, ListWebhooksData, ListWebhooksErrors, ListWebhooksResponses, PatchPostData, PatchPostErrors, PatchPostResponses, PatchProductData, PatchProductErrors, PatchProductResponses, ProvisionShopifyData, ProvisionShopifyErrors, ProvisionShopifyResponses, RevokeApiKeyData, RevokeApiKeyErrors, RevokeApiKeyResponses, RotateApiKeyData, RotateApiKeyErrors, RotateApiKeyResponses, ScrapePageData, ScrapePageErrors, ScrapePageResponses, ScrapeSinglePageData, ScrapeSinglePageErrors, ScrapeSinglePageResponses, SearchKnowledgeData, SearchKnowledgeErrors, SearchKnowledgeResponses, SearchPostsData, SearchPostsErrors, SearchPostsResponses, SearchProductsData, SearchProductsErrors, SearchProductsResponses, SearchPromptsData, SearchPromptsErrors, SearchPromptsResponses, SearchSearchesData, SearchSearchesErrors, SearchSearchesResponses, SearchThreadsData, SearchThreadsErrors, SearchThreadsResponses, StartCrawlData, StartCrawlErrors, StartCrawlResponses, StoreCredentialsData, StoreCredentialsErrors, StoreCredentialsResponses, SubmitFeedbackData, SubmitFeedbackErrors, SubmitFeedbackResponses, TestDomainConnectionData, TestDomainConnectionErrors, TestDomainConnectionResponses, TestWebhookData, TestWebhookErrors, TestWebhookResponses, UpdateChatWidgetConfigData, UpdateChatWidgetConfigErrors, UpdateChatWidgetConfigResponses, UpdateCrawlConfigData, UpdateCrawlConfigErrors, UpdateCrawlConfigResponses, UpdateCustomDomainData, UpdateCustomDomainErrors, UpdateCustomDomainResponses, UpdateLiveAgentScheduleData, UpdateLiveAgentScheduleErrors, UpdateLiveAgentScheduleResponses, UpdateMcpConfigData, UpdateMcpConfigErrors, UpdateMcpConfigResponses, UpdateSearchWidgetConfigData, UpdateSearchWidgetConfigErrors, UpdateSearchWidgetConfigResponses, UpdateTenantFeaturesData, UpdateTenantFeaturesErrors, UpdateTenantFeaturesResponses, UpdateWebhookData, UpdateWebhookErrors, UpdateWebhookResponses, UpdateWorkspaceData, UpdateWorkspaceErrors, UpdateWorkspaceResponses, UpdateWorkspaceSettingsData, UpdateWorkspaceSettingsErrors, UpdateWorkspaceSettingsResponses, UpsertPostData, UpsertPostErrors, UpsertPostResponses, UpsertProductData, UpsertProductErrors, UpsertProductResponses, UpsertPromptData, UpsertPromptErrors, UpsertPromptResponses, UpsertTaxonomyData, UpsertTaxonomyErrors, UpsertTaxonomyResponses, ValidateCustomDomainData, ValidateCustomDomainErrors, ValidateCustomDomainResponses } from './types.gen';
+import type { AdminClaimTenantData, AdminClaimTenantErrors, AdminClaimTenantResponses, AdminDeleteTenantData, AdminDeleteTenantErrors, AdminDeleteTenantResponses, AdminFindByEmailData, AdminFindByEmailErrors, AdminFindByEmailResponses, AdminFindByOwnerData, AdminFindByOwnerErrors, AdminFindByOwnerResponses, AdminGetTenantData, AdminGetTenantErrors, AdminGetTenantResponses, AdminGetUsageData, AdminGetUsageErrors, AdminGetUsageResponses, AdminReactivateTenantData, AdminReactivateTenantErrors, AdminReactivateTenantResponses, AdminResetCrawlsData, AdminResetCrawlsErrors, AdminResetCrawlsResponses, AdminUpdateOwnerEmailData, AdminUpdateOwnerEmailErrors, AdminUpdateOwnerEmailResponses, AdminUpdateSubscriptionData, AdminUpdateSubscriptionErrors, AdminUpdateSubscriptionResponses, AdminUpdateTierData, AdminUpdateTierErrors, AdminUpdateTierResponses, AdminUpdateUsageData, AdminUpdateUsageErrors, AdminUpdateUsageResponses, BulkDeletePostsData, BulkDeletePostsErrors, BulkDeletePostsResponses, BulkDeleteProductsData, BulkDeleteProductsErrors, BulkDeleteProductsResponses, BulkDeletePromptsData, BulkDeletePromptsErrors, BulkDeletePromptsResponses, BulkDeleteTaxonomiesData, BulkDeleteTaxonomiesErrors, BulkDeleteTaxonomiesResponses, BulkDeleteThreadsData, BulkDeleteThreadsErrors, BulkDeleteThreadsResponses, BulkUpdateWebhookStatusData, BulkUpdateWebhookStatusErrors, BulkUpdateWebhookStatusResponses, BulkUpsertPostsData, BulkUpsertPostsErrors, BulkUpsertPostsResponses, BulkUpsertProductsData, BulkUpsertProductsErrors, BulkUpsertProductsResponses, BulkUpsertPromptsData, BulkUpsertPromptsErrors, BulkUpsertPromptsResponses, BulkUpsertTaxonomiesData, BulkUpsertTaxonomiesErrors, BulkUpsertTaxonomiesResponses, CancelCrawlData, CancelCrawlErrors, CancelCrawlResponses, ChatData, ChatErrors, ChatResponses, ClearDomainErrorsData, ClearDomainErrorsErrors, ClearDomainErrorsResponses, CommitSearchData, CommitSearchErrors, CommitSearchResponses, ComplianceCustomerDataRequestData, ComplianceCustomerDataRequestErrors, ComplianceCustomerDataRequestResponses, ComplianceCustomerRedactData, ComplianceCustomerRedactErrors, ComplianceCustomerRedactResponses, CreateApiKeyData, CreateApiKeyErrors, CreateApiKeyResponses, CreateCustomDomainData, CreateCustomDomainErrors, CreateCustomDomainResponses, CreateTenantWorkspaceData, CreateTenantWorkspaceErrors, CreateTenantWorkspaceResponses, CreateWebhookData, CreateWebhookErrors, CreateWebhookResponses, DeleteCredentialsData, DeleteCredentialsErrors, DeleteCredentialsResponses, DeleteCustomDomainData, DeleteCustomDomainErrors, DeleteCustomDomainResponses, DeleteFeedbackData, DeleteFeedbackErrors, DeleteFeedbackResponses, DeleteLiveAgentScheduleData, DeleteLiveAgentScheduleErrors, DeleteLiveAgentScheduleResponses, DeleteMcpConfigData, DeleteMcpConfigErrors, DeleteMcpConfigResponses, DeletePostData, DeletePostErrors, DeletePostResponses, DeletePostsByQueryData, DeletePostsByQueryErrors, DeletePostsByQueryResponses, DeleteProductData, DeleteProductErrors, DeleteProductResponses, DeleteProductsByQueryData, DeleteProductsByQueryErrors, DeleteProductsByQueryResponses, DeletePromptData, DeletePromptErrors, DeletePromptResponses, DeleteTaxonomiesByQueryData, DeleteTaxonomiesByQueryErrors, DeleteTaxonomiesByQueryResponses, DeleteTaxonomyData, DeleteTaxonomyErrors, DeleteTaxonomyResponses, DeleteTenantData, DeleteTenantErrors, DeleteTenantResponses, DeleteThreadData, DeleteThreadErrors, DeleteThreadResponses, DeleteWebhookData, DeleteWebhookErrors, DeleteWebhookResponses, DeleteWorkspaceData, DeleteWorkspaceErrors, DeleteWorkspaceResponses, DeprovisionData, DeprovisionErrors, DeprovisionResponses, DiscoverToolsData, DiscoverToolsErrors, DiscoverToolsResponses, EndHandoffData, EndHandoffErrors, EndHandoffResponses, EnrollCrawlNotificationData, EnrollCrawlNotificationErrors, EnrollCrawlNotificationResponses, ExportThreadsData, ExportThreadsErrors, ExportThreadsResponses, GenerateDomainConfigData, GenerateDomainConfigErrors, GenerateDomainConfigResponses, GetAnalyticsFeedbackData, GetAnalyticsFeedbackErrors, GetAnalyticsFeedbackResponses, GetChatAnalyticsData, GetChatAnalyticsErrors, GetChatAnalyticsResponses, GetChatWidgetConfigData, GetChatWidgetConfigErrors, GetChatWidgetConfigResponses, GetCrawlConfigData, GetCrawlConfigErrors, GetCrawlConfigResponses, GetCrawlHistoryData, GetCrawlHistoryErrors, GetCrawlHistoryResponses, GetCrawlStatusData, GetCrawlStatusErrors, GetCrawlStatusResponses, GetCredentialStatusData, GetCredentialStatusErrors, GetCredentialStatusResponses, GetDomainErrorsData, GetDomainErrorsErrors, GetDomainErrorsResponses, GetDomainErrorSummaryData, GetDomainErrorSummaryErrors, GetDomainErrorSummaryResponses, GetDomainTemplatesData, GetDomainTemplatesErrors, GetDomainTemplatesResponses, GetFeedbackAnalyticsData, GetFeedbackAnalyticsErrors, GetFeedbackAnalyticsResponses, GetKnowledgeData, GetKnowledgeErrors, GetKnowledgeResponses, GetLiveAgentScheduleData, GetLiveAgentScheduleErrors, GetLiveAgentScheduleResponses, GetLiveAgentStatusData, GetLiveAgentStatusErrors, GetLiveAgentStatusResponses, GetMcpConfigData, GetMcpConfigErrors, GetMcpConfigResponses, GetPostData, GetPostErrors, GetPostResponses, GetProductData, GetProductErrors, GetProductRecommendationsData, GetProductRecommendationsErrors, GetProductRecommendationsResponses, GetProductResponses, GetPromptData, GetPromptErrors, GetPromptResponses, GetSearchAnalyticsData, GetSearchAnalyticsErrors, GetSearchAnalyticsResponses, GetSearchWidgetConfigData, GetSearchWidgetConfigErrors, GetSearchWidgetConfigResponses, GetTaxonomyData, GetTaxonomyErrors, GetTaxonomyResponses, GetTenantStatusData, GetTenantStatusErrors, GetTenantStatusResponses, GetTenantUsageData, GetTenantUsageErrors, GetTenantUsageHistoryData, GetTenantUsageHistoryErrors, GetTenantUsageHistoryResponses, GetTenantUsageResponses, GetTenantWhoamiData, GetTenantWhoamiErrors, GetTenantWhoamiResponses, GetThreadAnalyticsData, GetThreadAnalyticsErrors, GetThreadAnalyticsResponses, GetThreadData, GetThreadErrors, GetThreadFeedbackData, GetThreadFeedbackErrors, GetThreadFeedbackResponses, GetThreadMessagesData, GetThreadMessagesErrors, GetThreadMessagesResponses, GetThreadResponses, GetUploadUrlData, GetUploadUrlErrors, GetUploadUrlResponses, GetWebhookData, GetWebhookErrors, GetWebhookResponses, GetWebhookStatsData, GetWebhookStatsErrors, GetWebhookStatsResponses, GetWorkspaceDetailsData, GetWorkspaceDetailsErrors, GetWorkspaceDetailsResponses, GetWorkspaceSettingsData, GetWorkspaceSettingsErrors, GetWorkspaceSettingsResponses, ListApiKeysData, ListApiKeysErrors, ListApiKeysResponses, ListCustomDomainsData, ListCustomDomainsErrors, ListCustomDomainsResponses, ListFeedbackData, ListFeedbackErrors, ListFeedbackResponses, ListPostIdsData, ListPostIdsErrors, ListPostIdsResponses, ListProductIdsData, ListProductIdsErrors, ListProductIdsResponses, ListProductsData, ListProductsErrors, ListProductsResponses, ListPromptsData, ListPromptsErrors, ListPromptsResponses, ListSlackChannelsData, ListSlackChannelsErrors, ListSlackChannelsResponses, ListTaxonomiesData, ListTaxonomiesErrors, ListTaxonomiesResponses, ListTaxonomyIdsData, ListTaxonomyIdsErrors, ListTaxonomyIdsResponses, ListTenantWorkspacesData, ListTenantWorkspacesErrors, ListTenantWorkspacesResponses, ListWebhooksData, ListWebhooksErrors, ListWebhooksResponses, PatchPostData, PatchPostErrors, PatchPostResponses, PatchProductData, PatchProductErrors, PatchProductResponses, ProvisionShopifyData, ProvisionShopifyErrors, ProvisionShopifyResponses, RevokeApiKeyData, RevokeApiKeyErrors, RevokeApiKeyResponses, RotateApiKeyData, RotateApiKeyErrors, RotateApiKeyResponses, ScrapePageData, ScrapePageErrors, ScrapePageResponses, ScrapeSinglePageData, ScrapeSinglePageErrors, ScrapeSinglePageResponses, SearchKnowledgeData, SearchKnowledgeErrors, SearchKnowledgeResponses, SearchPostsData, SearchPostsErrors, SearchPostsResponses, SearchProductsData, SearchProductsErrors, SearchProductsResponses, SearchPromptsData, SearchPromptsErrors, SearchPromptsResponses, SearchSearchesData, SearchSearchesErrors, SearchSearchesResponses, SearchThreadsData, SearchThreadsErrors, SearchThreadsResponses, StartCrawlData, StartCrawlErrors, StartCrawlResponses, StoreCredentialsData, StoreCredentialsErrors, StoreCredentialsResponses, SubmitFeedbackData, SubmitFeedbackErrors, SubmitFeedbackResponses, TestDomainConnectionData, TestDomainConnectionErrors, TestDomainConnectionResponses, TestWebhookData, TestWebhookErrors, TestWebhookResponses, UpdateChatWidgetConfigData, UpdateChatWidgetConfigErrors, UpdateChatWidgetConfigResponses, UpdateCrawlConfigData, UpdateCrawlConfigErrors, UpdateCrawlConfigResponses, UpdateCustomDomainData, UpdateCustomDomainErrors, UpdateCustomDomainResponses, UpdateLiveAgentScheduleData, UpdateLiveAgentScheduleErrors, UpdateLiveAgentScheduleResponses, UpdateMcpConfigData, UpdateMcpConfigErrors, UpdateMcpConfigResponses, UpdateSearchWidgetConfigData, UpdateSearchWidgetConfigErrors, UpdateSearchWidgetConfigResponses, UpdateTenantFeaturesData, UpdateTenantFeaturesErrors, UpdateTenantFeaturesResponses, UpdateWebhookData, UpdateWebhookErrors, UpdateWebhookResponses, UpdateWorkspaceData, UpdateWorkspaceErrors, UpdateWorkspaceResponses, UpdateWorkspaceSettingsData, UpdateWorkspaceSettingsErrors, UpdateWorkspaceSettingsResponses, UpsertPostData, UpsertPostErrors, UpsertPostResponses, UpsertProductData, UpsertProductErrors, UpsertProductResponses, UpsertPromptData, UpsertPromptErrors, UpsertPromptResponses, UpsertTaxonomyData, UpsertTaxonomyErrors, UpsertTaxonomyResponses, ValidateCustomDomainData, ValidateCustomDomainErrors, ValidateCustomDomainResponses } from './types.gen';
 
-export type Options<TData extends TDataShape = TDataShape, ThrowOnError extends boolean = boolean> = Options2<TData, ThrowOnError> & {
+export type Options<TData extends TDataShape = TDataShape, ThrowOnError extends boolean = boolean, TResponse = unknown> = Options2<TData, ThrowOnError, TResponse> & {
     /**
      * You can provide a client instance returned by `createClient()` instead of
      * individual options. This might be also useful if you want to implement a
@@ -21,7 +21,7 @@ export type Options<TData extends TDataShape = TDataShape, ThrowOnError extends 
 /**
  * Send a chat message
  *
- * Send a message and receive AI response. Supports streaming via NDJSON.
+ * Send a visitor message through the full multi-agent pipeline: triage classifies intent, query agents retrieve grounded context from the product / post indexes (plus any custom domain agents), and response agents synthesise a grounded answer with product cards or cited content. The response is streamed as NDJSON when `stream: true` (each line is one of `{ type: "token", ... }`, `{ type: "product", ... }`, `{ type: "done" }`), or returned as a single JSON object when `stream: false`. Pass `threadId` to continue a conversation (memories and prior turns are loaded); omit it for a fresh one. Respects the workspace's active persona / system-prompt configuration.
  */
 export const chat = <ThrowOnError extends boolean = false>(options?: Options<ChatData, ThrowOnError>) => (options?.client ?? client).post<ChatResponses, ChatErrors, ThrowOnError>({
     security: [{ scheme: 'bearer', type: 'http' }],
@@ -36,7 +36,7 @@ export const chat = <ThrowOnError extends boolean = false>(options?: Options<Cha
 /**
  * Start a website crawl
  *
- * Initiate a crawl of a website URL. Pages are discovered and indexed into the knowledge base.
+ * Enqueue a crawl of the given root URL for the workspace in `X-Workspace-ID`. The crawler discovers pages via sitemap + link graph, classifies each page (product, product listing, or general content), and indexes products into `savanto-products` and content into `savanto-posts`. This call is asynchronous and returns immediately with a `crawlId`; poll `GET /crawl/{crawlId}/status` to track progress or subscribe to the email notification endpoint to be pinged when it completes. Starting a new crawl while one is already running for the same workspace will be rejected with 409 — cancel the running one first.
  */
 export const startCrawl = <ThrowOnError extends boolean = false>(options?: Options<StartCrawlData, ThrowOnError>) => (options?.client ?? client).post<StartCrawlResponses, StartCrawlErrors, ThrowOnError>({
     security: [{ scheme: 'bearer', type: 'http' }],
@@ -66,7 +66,7 @@ export const scrapeSinglePage = <ThrowOnError extends boolean = false>(options?:
 /**
  * Get crawl configuration
  *
- * Retrieve the crawl configuration for a workspace.
+ * Return the persisted crawl configuration for the workspace (strategy, schedule, include / exclude URL patterns, max-pages budget, user-agent override). Use before a crawl to verify the active rules, or before an `update_crawl_config` call to preserve fields you are not changing.
  */
 export const getCrawlConfig = <ThrowOnError extends boolean = false>(options?: Options<GetCrawlConfigData, ThrowOnError>) => (options?.client ?? client).get<GetCrawlConfigResponses, GetCrawlConfigErrors, ThrowOnError>({
     security: [{ scheme: 'bearer', type: 'http' }],
@@ -77,7 +77,7 @@ export const getCrawlConfig = <ThrowOnError extends boolean = false>(options?: O
 /**
  * Update crawl configuration
  *
- * Update the crawl configuration for a workspace including strategy, schedule, exclude patterns, etc.
+ * Replace the crawl configuration for the workspace. Common fields: `strategy` (`full` reindexes everything, `smart` skips pages whose content hash matches the previous crawl), `schedule` (cron-like), `includePatterns` / `excludePatterns` (glob URL filters), `maxPages` (safety cap). Omitted fields are set to their defaults — if you only want to tweak one setting, `GET /crawl/config` first and merge. Changes take effect on the next crawl run.
  */
 export const updateCrawlConfig = <ThrowOnError extends boolean = false>(options?: Options<UpdateCrawlConfigData, ThrowOnError>) => (options?.client ?? client).put<UpdateCrawlConfigResponses, UpdateCrawlConfigErrors, ThrowOnError>({
     security: [{ scheme: 'bearer', type: 'http' }],
@@ -92,7 +92,7 @@ export const updateCrawlConfig = <ThrowOnError extends boolean = false>(options?
 /**
  * Get crawl history
  *
- * Retrieve recent crawl history for the tenant.
+ * Return a list of recent crawls for the tenant (or the workspace when `X-Workspace-ID` is set), newest first. Each entry has its final status (`completed`, `failed`, `cancelled`), page counts, duration, and any error summary — useful for diagnosing why a site's content is stale.
  */
 export const getCrawlHistory = <ThrowOnError extends boolean = false>(options?: Options<GetCrawlHistoryData, ThrowOnError>) => (options?.client ?? client).get<GetCrawlHistoryResponses, GetCrawlHistoryErrors, ThrowOnError>({
     security: [{ scheme: 'bearer', type: 'http' }],
@@ -103,7 +103,7 @@ export const getCrawlHistory = <ThrowOnError extends boolean = false>(options?: 
 /**
  * Get crawl status
  *
- * Check the progress and status of a running or completed crawl.
+ * Return live status for a specific crawl id: `status` (`running`, `completed`, `failed`, `cancelled`), pages discovered / indexed / skipped / failed, elapsed time, and the current URL being processed. Poll every 3–10 seconds while `running`; stop polling once status is terminal. Returns 404 if the crawl id does not belong to the caller's tenant.
  */
 export const getCrawlStatus = <ThrowOnError extends boolean = false>(options: Options<GetCrawlStatusData, ThrowOnError>) => (options.client ?? client).get<GetCrawlStatusResponses, GetCrawlStatusErrors, ThrowOnError>({
     security: [{ scheme: 'bearer', type: 'http' }],
@@ -120,6 +120,21 @@ export const cancelCrawl = <ThrowOnError extends boolean = false>(options: Optio
     security: [{ scheme: 'bearer', type: 'http' }],
     url: '/crawl/{id}/cancel',
     ...options
+});
+
+/**
+ * Enroll for a crawl-complete email
+ *
+ * Requests an email notification when this crawl reaches a terminal state (completed or failed). Intended for the dashboard "continue onboarding, email me when done" CTA. Rejects crawls that have already finished. **Admin-only endpoint.** The `email` in the body is treated as opaque and persisted verbatim; the cloud API does NOT authenticate ownership of that address. Callers holding the admin bearer are trusted to have derived the recipient from an authoritative source (e.g. the signed-in user session on the Next.js proxy). Do NOT expose this route via license-key / public scopes.
+ */
+export const enrollCrawlNotification = <ThrowOnError extends boolean = false>(options: Options<EnrollCrawlNotificationData, ThrowOnError>) => (options.client ?? client).post<EnrollCrawlNotificationResponses, EnrollCrawlNotificationErrors, ThrowOnError>({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/crawl/{id}/notifications',
+    ...options,
+    headers: {
+        'Content-Type': 'application/json',
+        ...options.headers
+    }
 });
 
 /**
@@ -151,7 +166,7 @@ export const listProducts = <ThrowOnError extends boolean = false>(options?: Opt
 /**
  * Upsert a product
  *
- * Create or update a product by external ID. Generates vector embeddings for semantic search.
+ * Create a new product or update the existing one whose `externalId` matches the body. Embeddings for the product's searchable text are generated and persisted as part of the call, so the product becomes searchable immediately after a successful response. Required fields: `externalId`, `name`. Optional: `description`, `price` (in cents), `priceMin` / `priceMax`, `stockStatus` (`in_stock` | `out_of_stock` | `limited`), `images` (array of URLs), `brand`, `category`, `attributes` (key/value). Workspaces with native Shopify / WooCommerce sync should normally rely on the plugin rather than calling this endpoint directly. Idempotent on `externalId`.
  */
 export const upsertProduct = <ThrowOnError extends boolean = false>(options?: Options<UpsertProductData, ThrowOnError>) => (options?.client ?? client).post<UpsertProductResponses, UpsertProductErrors, ThrowOnError>({
     security: [{ scheme: 'bearer', type: 'http' }],
@@ -196,7 +211,7 @@ export const bulkUpsertProducts = <ThrowOnError extends boolean = false>(options
 /**
  * Search products
  *
- * Semantic search across products with optional filters and facets. Uses AI agent for query enhancement when beneficial.
+ * Hybrid (BM25 + k-NN vector) search across the workspace's product catalog. Pass a natural-language `query` — the backend expands and filters it with an agent when that improves recall. Optional `filters` support `priceMin` / `priceMax`, `stockStatus`, `brand`, `category`, and arbitrary `attributes` equality. Optional `facets` returns aggregate counts for the requested fields. Use for "find X" style requests; use the chat endpoint instead if you want a conversational answer that cites the products.
  */
 export const searchProducts = <ThrowOnError extends boolean = false>(options?: Options<SearchProductsData, ThrowOnError>) => (options?.client ?? client).post<SearchProductsResponses, SearchProductsErrors, ThrowOnError>({
     security: [{ scheme: 'bearer', type: 'http' }],
@@ -274,7 +289,7 @@ export const patchProduct = <ThrowOnError extends boolean = false>(options: Opti
 /**
  * Upsert a post
  *
- * Create or update a post by external ID. Generates vector embeddings for semantic search.
+ * Create a new post / knowledge article or update the existing one whose `externalId` matches the body. Embeddings are generated synchronously so the post is immediately retrievable by chat and search. Required: `externalId`, `title`, `content` (markdown or plain text). Optional: `author`, `publishedAt` (ISO 8601), `url`, `tags`, `category`. Use this for help-center articles, FAQ entries, or arbitrary brand content that should be answerable via chat. For bulk backfills prefer `POST /posts/bulk`. Idempotent on `externalId`.
  */
 export const upsertPost = <ThrowOnError extends boolean = false>(options?: Options<UpsertPostData, ThrowOnError>) => (options?.client ?? client).post<UpsertPostResponses, UpsertPostErrors, ThrowOnError>({
     security: [{ scheme: 'bearer', type: 'http' }],
@@ -319,7 +334,7 @@ export const bulkUpsertPosts = <ThrowOnError extends boolean = false>(options?: 
 /**
  * Search posts
  *
- * Semantic search across posts with optional filters. Uses AI agent for query enhancement when beneficial.
+ * Hybrid semantic + lexical search across the workspace's indexed posts / knowledge articles. Pass a natural-language `query`; the response returns the top-matching posts with excerpts, scores, and URLs. Use when you need raw passages to feed another agent; use the chat endpoint when you want a cited, synthesised answer rather than a list of hits.
  */
 export const searchPosts = <ThrowOnError extends boolean = false>(options?: Options<SearchPostsData, ThrowOnError>) => (options?.client ?? client).post<SearchPostsResponses, SearchPostsErrors, ThrowOnError>({
     security: [{ scheme: 'bearer', type: 'http' }],
@@ -949,6 +964,17 @@ export const getTenantStatus = <ThrowOnError extends boolean = false>(options?: 
 });
 
 /**
+ * Identity probe (tenant, scopes, key type)
+ *
+ * Return the tenant ID, tier, API key ID, key type, and scope list for the current caller. Designed for agent / MCP bootstrapping so clients can decide which operations are available before issuing them. Does NOT return any secret material.
+ */
+export const getTenantWhoami = <ThrowOnError extends boolean = false>(options?: Options<GetTenantWhoamiData, ThrowOnError>) => (options?.client ?? client).get<GetTenantWhoamiResponses, GetTenantWhoamiErrors, ThrowOnError>({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/tenant/whoami',
+    ...options
+});
+
+/**
  * Update tenant feature flags
  */
 export const updateTenantFeatures = <ThrowOnError extends boolean = false>(options?: Options<UpdateTenantFeaturesData, ThrowOnError>) => (options?.client ?? client).patch<UpdateTenantFeaturesResponses, UpdateTenantFeaturesErrors, ThrowOnError>({
@@ -963,6 +989,8 @@ export const updateTenantFeatures = <ThrowOnError extends boolean = false>(optio
 
 /**
  * Get usage summary
+ *
+ * Return the authenticated tenant's current-period usage against plan limits: chat messages sent, products indexed, posts indexed, crawl pages processed, and the dates of the billing window. Use for quota-aware UX or to warn a user that the next operation would trip an overage.
  */
 export const getTenantUsage = <ThrowOnError extends boolean = false>(options?: Options<GetTenantUsageData, ThrowOnError>) => (options?.client ?? client).get<GetTenantUsageResponses, GetTenantUsageErrors, ThrowOnError>({
     security: [{ scheme: 'bearer', type: 'http' }],
@@ -982,7 +1010,7 @@ export const getTenantUsageHistory = <ThrowOnError extends boolean = false>(opti
 /**
  * List workspaces
  *
- * List all workspaces for the authenticated tenant.
+ * Return every workspace owned by the authenticated tenant, with each workspace's id, name, platform (wordpress | shopify | custom | none), and domain. Use this before calling any workspace-scoped endpoint (crawl, products, posts, chat) to discover the correct `workspaceId` to pass via the `X-Workspace-ID` header. Always cheap and safe to call repeatedly.
  */
 export const listTenantWorkspaces = <ThrowOnError extends boolean = false>(options?: Options<ListTenantWorkspacesData, ThrowOnError>) => (options?.client ?? client).get<ListTenantWorkspacesResponses, ListTenantWorkspacesErrors, ThrowOnError>({
     security: [{ scheme: 'bearer', type: 'http' }],
@@ -993,7 +1021,7 @@ export const listTenantWorkspaces = <ThrowOnError extends boolean = false>(optio
 /**
  * Create a workspace
  *
- * Create a new workspace under the authenticated tenant.
+ * Create a new workspace (a distinct site / storefront) under the authenticated tenant. Returns the workspace id you will pass as `X-Workspace-ID` on every subsequent content, crawl, and chat request. Typical onboarding flow: create → (optionally set platform) → start crawl → ingest products/posts. Creation does NOT enqueue a crawl — call `POST /crawl` separately.
  */
 export const createTenantWorkspace = <ThrowOnError extends boolean = false>(options?: Options<CreateTenantWorkspaceData, ThrowOnError>) => (options?.client ?? client).post<CreateTenantWorkspaceResponses, CreateTenantWorkspaceErrors, ThrowOnError>({
     security: [{ scheme: 'bearer', type: 'http' }],
@@ -1007,6 +1035,8 @@ export const createTenantWorkspace = <ThrowOnError extends boolean = false>(opti
 
 /**
  * Delete a workspace
+ *
+ * Permanently delete a workspace and every document indexed under it (products, posts, taxonomies, chat threads, crawl history). This is NOT recoverable — prefer `POST /workspaces` to create a new one rather than delete + recreate for routine cleanup. Returns 404 if the id does not belong to the caller's tenant.
  */
 export const deleteWorkspace = <ThrowOnError extends boolean = false>(options: Options<DeleteWorkspaceData, ThrowOnError>) => (options.client ?? client).delete<DeleteWorkspaceResponses, DeleteWorkspaceErrors, ThrowOnError>({
     security: [{ scheme: 'bearer', type: 'http' }],
@@ -1016,6 +1046,8 @@ export const deleteWorkspace = <ThrowOnError extends boolean = false>(options: O
 
 /**
  * Update a workspace
+ *
+ * Patch name, platform, or metadata on an existing workspace. Accepts a partial body; omitted fields are left untouched. Changing `platform` from `none` to `wordpress` / `shopify` signals the ingestion pipeline to prefer native sync over crawl-derived content on subsequent operations.
  */
 export const updateWorkspace = <ThrowOnError extends boolean = false>(options: Options<UpdateWorkspaceData, ThrowOnError>) => (options.client ?? client).put<UpdateWorkspaceResponses, UpdateWorkspaceErrors, ThrowOnError>({
     security: [{ scheme: 'bearer', type: 'http' }],
@@ -1096,7 +1128,7 @@ export const updateMcpConfig = <ThrowOnError extends boolean = false>(options?: 
  */
 export const getCredentialStatus = <ThrowOnError extends boolean = false>(options?: Options<GetCredentialStatusData, ThrowOnError>) => (options?.client ?? client).get<GetCredentialStatusResponses, GetCredentialStatusErrors, ThrowOnError>({
     security: [{ scheme: 'bearer', type: 'http' }],
-    url: '/tenant/credentials/status',
+    url: '/tenant/live-agent/credentials/status',
     ...options
 });
 
@@ -1105,7 +1137,7 @@ export const getCredentialStatus = <ThrowOnError extends boolean = false>(option
  */
 export const deleteCredentials = <ThrowOnError extends boolean = false>(options?: Options<DeleteCredentialsData, ThrowOnError>) => (options?.client ?? client).delete<DeleteCredentialsResponses, DeleteCredentialsErrors, ThrowOnError>({
     security: [{ scheme: 'bearer', type: 'http' }],
-    url: '/tenant/credentials',
+    url: '/tenant/live-agent/credentials',
     ...options
 });
 
@@ -1114,7 +1146,7 @@ export const deleteCredentials = <ThrowOnError extends boolean = false>(options?
  */
 export const storeCredentials = <ThrowOnError extends boolean = false>(options?: Options<StoreCredentialsData, ThrowOnError>) => (options?.client ?? client).post<StoreCredentialsResponses, StoreCredentialsErrors, ThrowOnError>({
     security: [{ scheme: 'bearer', type: 'http' }],
-    url: '/tenant/credentials',
+    url: '/tenant/live-agent/credentials',
     ...options,
     headers: {
         'Content-Type': 'application/json',
@@ -1127,7 +1159,7 @@ export const storeCredentials = <ThrowOnError extends boolean = false>(options?:
  */
 export const deleteLiveAgentSchedule = <ThrowOnError extends boolean = false>(options?: Options<DeleteLiveAgentScheduleData, ThrowOnError>) => (options?.client ?? client).delete<DeleteLiveAgentScheduleResponses, DeleteLiveAgentScheduleErrors, ThrowOnError>({
     security: [{ scheme: 'bearer', type: 'http' }],
-    url: '/tenant/schedule',
+    url: '/tenant/live-agent/schedule',
     ...options
 });
 
@@ -1136,7 +1168,7 @@ export const deleteLiveAgentSchedule = <ThrowOnError extends boolean = false>(op
  */
 export const getLiveAgentSchedule = <ThrowOnError extends boolean = false>(options?: Options<GetLiveAgentScheduleData, ThrowOnError>) => (options?.client ?? client).get<GetLiveAgentScheduleResponses, GetLiveAgentScheduleErrors, ThrowOnError>({
     security: [{ scheme: 'bearer', type: 'http' }],
-    url: '/tenant/schedule',
+    url: '/tenant/live-agent/schedule',
     ...options
 });
 
@@ -1145,7 +1177,7 @@ export const getLiveAgentSchedule = <ThrowOnError extends boolean = false>(optio
  */
 export const updateLiveAgentSchedule = <ThrowOnError extends boolean = false>(options?: Options<UpdateLiveAgentScheduleData, ThrowOnError>) => (options?.client ?? client).put<UpdateLiveAgentScheduleResponses, UpdateLiveAgentScheduleErrors, ThrowOnError>({
     security: [{ scheme: 'bearer', type: 'http' }],
-    url: '/tenant/schedule',
+    url: '/tenant/live-agent/schedule',
     ...options,
     headers: {
         'Content-Type': 'application/json',
@@ -1344,6 +1376,8 @@ export const testDomainConnection = <ThrowOnError extends boolean = false>(optio
 
 /**
  * Get workspace details
+ *
+ * Return the full configuration for a workspace: platform, domain, crawl config, widget settings, chat persona, live-agent handoff, custom domains, and document counts. Preferred read for agent bootstrap because it returns every knob in one call.
  */
 export const getWorkspaceDetails = <ThrowOnError extends boolean = false>(options: Options<GetWorkspaceDetailsData, ThrowOnError>) => (options.client ?? client).get<GetWorkspaceDetailsResponses, GetWorkspaceDetailsErrors, ThrowOnError>({
     security: [{ scheme: 'bearer', type: 'http' }],
@@ -1594,4 +1628,34 @@ export const adminResetCrawls = <ThrowOnError extends boolean = false>(options: 
     security: [{ scheme: 'bearer', type: 'http' }],
     url: '/admin/tenant/{tenantId}/crawls/reset',
     ...options
+});
+
+/**
+ * Redact a customer across all stored PII
+ *
+ * Hard-deletes every thread document and memory document within the caller tenant that matches the supplied customer identifiers. Runs as async OpenSearch tasks; the response contains task IDs for reconciliation. Idempotent when `caller.externalId` is supplied.
+ */
+export const complianceCustomerRedact = <ThrowOnError extends boolean = false>(options?: Options<ComplianceCustomerRedactData, ThrowOnError>) => (options?.client ?? client).post<ComplianceCustomerRedactResponses, ComplianceCustomerRedactErrors, ThrowOnError>({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/compliance/customer-redact',
+    ...options,
+    headers: {
+        'Content-Type': 'application/json',
+        ...options?.headers
+    }
+});
+
+/**
+ * Record a customer data-export request
+ *
+ * Queues a customer data-export request and notifies ops to fulfill it within Shopify's 30-day SLA. Idempotent when `caller.externalId` is supplied.
+ */
+export const complianceCustomerDataRequest = <ThrowOnError extends boolean = false>(options?: Options<ComplianceCustomerDataRequestData, ThrowOnError>) => (options?.client ?? client).post<ComplianceCustomerDataRequestResponses, ComplianceCustomerDataRequestErrors, ThrowOnError>({
+    security: [{ scheme: 'bearer', type: 'http' }],
+    url: '/compliance/customer-data-request',
+    ...options,
+    headers: {
+        'Content-Type': 'application/json',
+        ...options?.headers
+    }
 });

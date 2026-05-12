@@ -1,6 +1,6 @@
 {
   "name": "@savantoai/ai-sdk",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "Official JavaScript/TypeScript SDK for Savanto AI — search, chat, recommendations, and knowledge base management",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
@@ -28,6 +28,8 @@
     "test:all": "vitest run && vitest run --config vitest.integration.config.ts",
     "lint": "biome lint src",
     "typecheck": "tsc --noEmit",
+    "generate": "openapi-ts",
+    "generate:live": "openapi-ts -i http://localhost:3001/doc",
     "prepublishOnly": "npm run build"
   },
   "keywords": [
@@ -54,20 +56,20 @@
   "files": [
     "dist",
     "README.md",
+    "CHANGELOG.md",
     "LICENSE"
   ],
   "engines": {
     "node": ">=18.0.0"
   },
   "devDependencies": {
-    "@hey-api/client-fetch": "^0.13.1",
-    "@hey-api/openapi-ts": "^0.94.5",
-    "@types/node": "^20.10.0",
-    "@typescript-eslint/eslint-plugin": "^6.15.0",
-    "@typescript-eslint/parser": "^6.15.0",
-    "eslint": "^8.56.0",
-    "tsdown": "^0.16.0",
-    "typescript": "^5.3.3",
+    "@hey-api/openapi-ts": "~0.97.1",
+    "@types/node": "^20.19.41",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.57.1",
+    "tsdown": "^0.22.0",
+    "typescript": "^5.9.3",
     "vitest": "^3.2.4"
   },
   "publishConfig": {

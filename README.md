@@ -101,6 +101,9 @@ const { data: ids } = await listProductIds({ client });
 ```typescript
 import { chat } from '@savantoai/ai-sdk';
 
+// `throwOnError: true` makes `response` non-optional so `response.body` is
+// safe to read directly. Without it (since 2.2.0) `response` is typed as
+// `Response | undefined`. See CHANGELOG.md for details.
 const { data, response } = await chat({
   client,
   body: {
@@ -108,6 +111,7 @@ const { data, response } = await chat({
     threadId: 'thread-1',
     stream: true,
   },
+  throwOnError: true,
 });
 
 // For streaming (NDJSON), read the response body directly:
@@ -265,6 +269,12 @@ workspaceIdFromUrl('my-store.myshopify.com');     // 'my-store-myshopify-com'
 Full endpoint documentation with request/response schemas:
 
 **[savanto.ai/docs/api](https://savanto.ai/docs/api)**
+
+## Versioning & changelog
+
+See [CHANGELOG.md](./CHANGELOG.md) for per-version migration notes,
+including the TypeScript-level breaking changes in `2.2.0`. Type
+narrowings and generator-driven shape changes are treated as major.
 
 ## Regeneration
 

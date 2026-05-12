@@ -20,7 +20,7 @@ export type ErrorResponse = {
         type: 'invalid_request_error' | 'authentication_error' | 'authorization_error' | 'rate_limit_error' | 'api_error';
         message: string;
         code: string;
-        param: string;
+        param: string | null;
     };
 };
 
@@ -67,6 +67,13 @@ export type UpdateCrawlConfigRequest = {
     overagesEnabled?: boolean;
 };
 
+export type EnrollCrawlNotificationRequest = {
+    /**
+     * Recipient for the crawl-complete email. Caller is responsible for validating the signed-in user owns this address.
+     */
+    email: string;
+};
+
 export type ScrapeRequest = {
     url: string;
     action?: 'scrape' | 'delete';
@@ -80,28 +87,28 @@ export type ProductInput = {
     content?: string;
     searchableText?: string;
     excerpt?: string;
-    price?: number;
-    salePrice?: number;
-    regularPrice?: number;
+    price?: number | null;
+    salePrice?: number | null;
+    regularPrice?: number | null;
     onSale?: boolean;
-    priceMin?: number;
-    priceMax?: number;
-    stockQuantity?: number;
+    priceMin?: number | null;
+    priceMax?: number | null;
+    stockQuantity?: number | null;
     stockStatus?: 'instock' | 'outofstock' | 'onbackorder';
     sku?: string;
     type?: 'simple' | 'variable' | 'grouped' | 'external';
-    weight?: number;
+    weight?: number | null;
     dimensions?: {
-        length?: number;
-        width?: number;
-        height?: number;
-    };
-    rating?: number;
+        length?: number | null;
+        width?: number | null;
+        height?: number | null;
+    } | null;
+    rating?: number | null;
     reviewCount?: number;
     categories?: Array<string>;
     tags?: Array<string>;
     brands?: Array<string>;
-    image?: string;
+    image?: string | null;
     url?: string;
     status?: string;
     visibility?: string;
@@ -110,7 +117,7 @@ export type ProductInput = {
     downloadable?: boolean;
     attributes?: {
         [key: string]: Array<string>;
-    };
+    } | null;
     metadata?: {
         [key: string]: string | number | boolean | Array<string>;
     };
@@ -124,28 +131,28 @@ export type Product = {
     content?: string;
     excerpt?: string;
     searchableText?: string;
-    price?: number;
-    salePrice?: number;
-    regularPrice?: number;
+    price?: number | null;
+    salePrice?: number | null;
+    regularPrice?: number | null;
     onSale?: boolean;
-    priceMin?: number;
-    priceMax?: number;
-    stockQuantity?: number;
+    priceMin?: number | null;
+    priceMax?: number | null;
+    stockQuantity?: number | null;
     stockStatus?: string;
     sku?: string;
     type?: string;
-    weight?: number;
+    weight?: number | null;
     dimensions?: {
-        length?: number;
-        width?: number;
-        height?: number;
-    };
-    rating?: number;
+        length?: number | null;
+        width?: number | null;
+        height?: number | null;
+    } | null;
+    rating?: number | null;
     reviewCount?: number;
     categories?: Array<string>;
     tags?: Array<string>;
     brands?: Array<string>;
-    image?: string;
+    image?: string | null;
     url?: string;
     status?: string;
     visibility?: string;
@@ -156,7 +163,7 @@ export type Product = {
     updatedAt?: string;
     attributes?: {
         [key: string]: Array<string>;
-    };
+    } | null;
     metadata?: {
         [key: string]: string | number | boolean | Array<string>;
     };
@@ -170,11 +177,11 @@ export type Product = {
 };
 
 export type Pagination = {
-    total: number;
+    total: number | null;
     limit: number;
     hasMore: boolean;
     offset?: number;
-    cursor?: string;
+    cursor?: string | null;
 };
 
 export type ProductSearchRequest = {
@@ -223,11 +230,11 @@ export type PostInput = {
     status?: 'publish' | 'draft' | 'private' | 'pending';
     authorId?: string;
     authorName?: string;
-    publishedAt?: string;
+    publishedAt?: string | null;
     categories?: Array<string>;
     tags?: Array<string>;
     url?: string;
-    featuredImage?: string;
+    featuredImage?: string | null;
     source?: string;
     indexStatus?: 'active' | 'hidden' | 'disabled';
     metadata?: {
@@ -235,7 +242,7 @@ export type PostInput = {
     };
     attributes?: {
         [key: string]: unknown;
-    };
+    } | null;
 };
 
 export type Post = {
@@ -255,13 +262,13 @@ export type Post = {
     tags?: Array<string>;
     metaTitle?: string;
     metaDescription?: string;
-    featuredImage?: string;
+    featuredImage?: string | null;
     createdAt?: string;
     updatedAt?: string;
-    publishedAt?: string;
+    publishedAt?: string | null;
     attributes?: {
-        [key: string]: string | Array<string> | number | boolean | unknown;
-    };
+        [key: string]: string | Array<string> | number | boolean | null;
+    } | null;
     metadata?: {
         [key: string]: string | number | boolean | Array<string>;
     };
@@ -300,7 +307,7 @@ export type ThreadSearchRequest = {
     minTokens?: number;
     maxTokens?: number;
     hasUnresolvedQueries?: boolean;
-    sortBy?: 'timestamp' | 'message_count' | 'token_count';
+    sortBy?: 'timestamp' | 'messageCount' | 'tokenCount';
     sortOrder?: 'asc' | 'desc';
 };
 
@@ -531,9 +538,22 @@ export type TenantStatus = {
     tenantId?: string;
     tier?: string;
     status?: 'active' | 'inactive' | 'suspended';
-    publishableKey?: string;
+    publishableKey?: string | null;
     jwtSecret?: string;
     [key: string]: unknown;
+};
+
+export type TenantWhoami = {
+    tenantId: string;
+    tier: string;
+    apiKeyId: string;
+    keyType: 'secret' | 'publishable';
+    scopes?: Array<string>;
+    label?: string;
+};
+
+export type UpdateTenantFeaturesRequest = {
+    overagesEnabled: boolean;
 };
 
 export type WorkspaceSummary = {
@@ -553,6 +573,43 @@ export type CreateWorkspaceRequest = {
     description?: string;
     source?: string;
     siteUrl?: string;
+};
+
+export type UpdateWorkspaceRequest = {
+    name?: string;
+    domain?: string;
+};
+
+export type GetUploadUrlRequest = {
+    fileName: string;
+    contentType: string;
+    fileSize: number;
+};
+
+export type UpdateMcpConfigRequest = {
+    ordersUri?: string;
+    inventoryUri?: string;
+    shippingUri?: string;
+    supportUri?: string;
+    accountUri?: string;
+    analyticsUri?: string;
+    [key: string]: unknown;
+};
+
+export type StoreLiveAgentCredentialsRequest = {
+    provider: 'zendesk' | 'intercom' | 'drift' | 'slack';
+    apiToken?: string;
+    webhookSecret?: string;
+    subdomain?: string;
+    integrationId?: string;
+    botToken?: string;
+    channelId?: string;
+    signingSecret?: string;
+    availabilitySchedule?: string | null;
+};
+
+export type UpdateLiveAgentScheduleRequest = {
+    schedule: string | null;
 };
 
 export type DeprovisionResult = {
@@ -639,6 +696,64 @@ export type AdminUpdateSubscriptionRequest = {
     status?: string;
     tier?: string;
     providerCustomerId?: string;
+};
+
+export type ComplianceAuditResponse = {
+    requestId: string;
+    status: 'queued' | 'completed' | 'failed';
+    requestType: 'customer_redact' | 'customer_data_request';
+    requestedAt: string;
+    /**
+     * OpenSearch _tasks id for thread-doc deletion (reconciler polls this).
+     */
+    threadTaskId?: string;
+    memoryTaskId?: string;
+    summary?: string;
+};
+
+export type CustomerRedactRequest = {
+    customer: ComplianceCustomerId;
+    caller: ComplianceCaller;
+    /**
+     * If provided, limit redaction to a single workspace. Defaults to tenant scope.
+     */
+    workspaceId?: string;
+};
+
+export type ComplianceCustomerId = {
+    /**
+     * Customer email (case-insensitive match).
+     */
+    email?: string;
+    /**
+     * Customer phone in E.164 format.
+     */
+    phone?: string;
+    /**
+     * Platform-specific customer identifier (e.g. Shopify customer.id).
+     */
+    customerId?: string;
+};
+
+export type ComplianceCaller = {
+    /**
+     * Which integration fired the request.
+     */
+    source: 'shopify' | 'wordpress' | 'dashboard' | 'sdk';
+    /**
+     * Merchant shop domain (Shopify webhooks only).
+     */
+    shopDomain?: string;
+    /**
+     * Upstream request id used to make this call idempotent on retry.
+     */
+    externalId?: string;
+};
+
+export type CustomerDataRequest = {
+    customer: ComplianceCustomerId;
+    caller: ComplianceCaller;
+    workspaceId?: string;
 };
 
 export type ChatData = {
@@ -1002,6 +1117,53 @@ export type CancelCrawlResponses = {
 };
 
 export type CancelCrawlResponse = CancelCrawlResponses[keyof CancelCrawlResponses];
+
+export type EnrollCrawlNotificationData = {
+    body?: EnrollCrawlNotificationRequest;
+    path: {
+        id: string;
+    };
+    query?: never;
+    url: '/crawl/{id}/notifications';
+};
+
+export type EnrollCrawlNotificationErrors = {
+    /**
+     * Validation error
+     */
+    400: ErrorResponse;
+    /**
+     * Unauthorized
+     */
+    401: ErrorResponse;
+    /**
+     * Forbidden
+     */
+    403: ErrorResponse;
+    /**
+     * Not found
+     */
+    404: ErrorResponse;
+    /**
+     * Rate limit exceeded
+     */
+    429: ErrorResponse;
+};
+
+export type EnrollCrawlNotificationError = EnrollCrawlNotificationErrors[keyof EnrollCrawlNotificationErrors];
+
+export type EnrollCrawlNotificationResponses = {
+    /**
+     * Enrolled
+     */
+    200: {
+        data: {
+            enrolled: true;
+        };
+    };
+};
+
+export type EnrollCrawlNotificationResponse = EnrollCrawlNotificationResponses[keyof EnrollCrawlNotificationResponses];
 
 export type ScrapePageData = {
     body?: ScrapeRequest;
@@ -2996,7 +3158,19 @@ export type BulkUpdateWebhookStatusResponse = BulkUpdateWebhookStatusResponses[k
 export type ListWebhooksData = {
     body?: never;
     path?: never;
-    query?: never;
+    query?: {
+        page?: number;
+        limit?: number;
+        status?: 'active' | 'inactive' | 'suspended';
+        events?: string;
+        createdBy?: string;
+        nameContains?: string;
+        urlContains?: string;
+        createdAfter?: string;
+        createdBefore?: string;
+        sortBy?: 'name' | 'createdAt' | 'updatedAt' | 'lastDeliveryAt';
+        sortOrder?: 'asc' | 'desc';
+    };
     url: '/webhooks';
 };
 
@@ -4099,10 +4273,53 @@ export type GetTenantStatusResponses = {
 
 export type GetTenantStatusResponse = GetTenantStatusResponses[keyof GetTenantStatusResponses];
 
-export type UpdateTenantFeaturesData = {
-    body?: {
-        [key: string]: unknown;
+export type GetTenantWhoamiData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/tenant/whoami';
+};
+
+export type GetTenantWhoamiErrors = {
+    /**
+     * Validation error
+     */
+    400: ErrorResponse;
+    /**
+     * Unauthorized
+     */
+    401: ErrorResponse;
+    /**
+     * Forbidden
+     */
+    403: ErrorResponse;
+    /**
+     * Not found
+     */
+    404: ErrorResponse;
+    /**
+     * Rate limit exceeded
+     */
+    429: ErrorResponse;
+};
+
+export type GetTenantWhoamiError = GetTenantWhoamiErrors[keyof GetTenantWhoamiErrors];
+
+export type GetTenantWhoamiResponses = {
+    /**
+     * Current caller identity
+     */
+    200: {
+        object: 'tenant';
+        requestId: string;
+        data: TenantWhoami;
     };
+};
+
+export type GetTenantWhoamiResponse = GetTenantWhoamiResponses[keyof GetTenantWhoamiResponses];
+
+export type UpdateTenantFeaturesData = {
+    body?: UpdateTenantFeaturesRequest;
     path?: never;
     query?: never;
     url: '/tenant/features';
@@ -4234,9 +4451,9 @@ export type GetTenantUsageHistoryResponses = {
     200: {
         object: 'usage';
         requestId: string;
-        data: {
+        data: Array<{
             [key: string]: unknown;
-        };
+        }>;
     };
 };
 
@@ -4388,9 +4605,7 @@ export type DeleteWorkspaceResponses = {
 export type DeleteWorkspaceResponse = DeleteWorkspaceResponses[keyof DeleteWorkspaceResponses];
 
 export type UpdateWorkspaceData = {
-    body?: {
-        [key: string]: unknown;
-    };
+    body?: UpdateWorkspaceRequest;
     path: {
         workspaceId: string;
     };
@@ -4536,9 +4751,7 @@ export type SearchKnowledgeResponses = {
 export type SearchKnowledgeResponse = SearchKnowledgeResponses[keyof SearchKnowledgeResponses];
 
 export type GetUploadUrlData = {
-    body?: {
-        [key: string]: unknown;
-    };
+    body?: GetUploadUrlRequest;
     path?: never;
     query?: never;
     url: '/tenant/upload-url';
@@ -4679,9 +4892,7 @@ export type GetMcpConfigResponses = {
 export type GetMcpConfigResponse = GetMcpConfigResponses[keyof GetMcpConfigResponses];
 
 export type UpdateMcpConfigData = {
-    body?: {
-        [key: string]: unknown;
-    };
+    body?: UpdateMcpConfigRequest;
     path?: never;
     query?: never;
     url: '/tenant/mcp';
@@ -4731,7 +4942,7 @@ export type GetCredentialStatusData = {
     body?: never;
     path?: never;
     query?: never;
-    url: '/tenant/credentials/status';
+    url: '/tenant/live-agent/credentials/status';
 };
 
 export type GetCredentialStatusErrors = {
@@ -4778,7 +4989,7 @@ export type DeleteCredentialsData = {
     body?: never;
     path?: never;
     query?: never;
-    url: '/tenant/credentials';
+    url: '/tenant/live-agent/credentials';
 };
 
 export type DeleteCredentialsErrors = {
@@ -4822,12 +5033,10 @@ export type DeleteCredentialsResponses = {
 export type DeleteCredentialsResponse = DeleteCredentialsResponses[keyof DeleteCredentialsResponses];
 
 export type StoreCredentialsData = {
-    body?: {
-        [key: string]: unknown;
-    };
+    body?: StoreLiveAgentCredentialsRequest;
     path?: never;
     query?: never;
-    url: '/tenant/credentials';
+    url: '/tenant/live-agent/credentials';
 };
 
 export type StoreCredentialsErrors = {
@@ -4874,7 +5083,7 @@ export type DeleteLiveAgentScheduleData = {
     body?: never;
     path?: never;
     query?: never;
-    url: '/tenant/schedule';
+    url: '/tenant/live-agent/schedule';
 };
 
 export type DeleteLiveAgentScheduleErrors = {
@@ -4921,7 +5130,7 @@ export type GetLiveAgentScheduleData = {
     body?: never;
     path?: never;
     query?: never;
-    url: '/tenant/schedule';
+    url: '/tenant/live-agent/schedule';
 };
 
 export type GetLiveAgentScheduleErrors = {
@@ -4965,12 +5174,10 @@ export type GetLiveAgentScheduleResponses = {
 export type GetLiveAgentScheduleResponse = GetLiveAgentScheduleResponses[keyof GetLiveAgentScheduleResponses];
 
 export type UpdateLiveAgentScheduleData = {
-    body?: {
-        [key: string]: unknown;
-    };
+    body?: UpdateLiveAgentScheduleRequest;
     path?: never;
     query?: never;
-    url: '/tenant/schedule';
+    url: '/tenant/live-agent/schedule';
 };
 
 export type UpdateLiveAgentScheduleErrors = {
@@ -5057,7 +5264,7 @@ export type GetWorkspaceSettingsResponses = {
         data: {
             settings: {
                 [key: string]: unknown;
-            };
+            } | null;
         };
     };
 };
@@ -6513,7 +6720,7 @@ export type ListApiKeysResponses = {
                 [key: string]: unknown;
             }>;
             pagination: {
-                total: number;
+                total: number | null;
                 limit: number;
                 hasMore: boolean;
             };
@@ -6895,7 +7102,7 @@ export type AdminFindByEmailResponses = {
                 platform?: string;
             }>;
             pagination: {
-                total: number;
+                total: number | null;
                 limit: number;
                 hasMore: boolean;
             };
@@ -6956,7 +7163,7 @@ export type AdminFindByOwnerResponses = {
                 createdAt: string;
             }>;
             pagination: {
-                total: number;
+                total: number | null;
                 limit: number;
                 hasMore: boolean;
             };
@@ -7444,3 +7651,93 @@ export type AdminResetCrawlsResponses = {
 };
 
 export type AdminResetCrawlsResponse = AdminResetCrawlsResponses[keyof AdminResetCrawlsResponses];
+
+export type ComplianceCustomerRedactData = {
+    body?: CustomerRedactRequest;
+    path?: never;
+    query?: never;
+    url: '/compliance/customer-redact';
+};
+
+export type ComplianceCustomerRedactErrors = {
+    /**
+     * Validation error
+     */
+    400: ErrorResponse;
+    /**
+     * Unauthorized
+     */
+    401: ErrorResponse;
+    /**
+     * Forbidden
+     */
+    403: ErrorResponse;
+    /**
+     * Not found
+     */
+    404: ErrorResponse;
+    /**
+     * Rate limit exceeded
+     */
+    429: ErrorResponse;
+};
+
+export type ComplianceCustomerRedactError = ComplianceCustomerRedactErrors[keyof ComplianceCustomerRedactErrors];
+
+export type ComplianceCustomerRedactResponses = {
+    /**
+     * Redaction queued (async task submitted)
+     */
+    200: {
+        object: 'compliance_request';
+        requestId: string;
+        data: ComplianceAuditResponse;
+    };
+};
+
+export type ComplianceCustomerRedactResponse = ComplianceCustomerRedactResponses[keyof ComplianceCustomerRedactResponses];
+
+export type ComplianceCustomerDataRequestData = {
+    body?: CustomerDataRequest;
+    path?: never;
+    query?: never;
+    url: '/compliance/customer-data-request';
+};
+
+export type ComplianceCustomerDataRequestErrors = {
+    /**
+     * Validation error
+     */
+    400: ErrorResponse;
+    /**
+     * Unauthorized
+     */
+    401: ErrorResponse;
+    /**
+     * Forbidden
+     */
+    403: ErrorResponse;
+    /**
+     * Not found
+     */
+    404: ErrorResponse;
+    /**
+     * Rate limit exceeded
+     */
+    429: ErrorResponse;
+};
+
+export type ComplianceCustomerDataRequestError = ComplianceCustomerDataRequestErrors[keyof ComplianceCustomerDataRequestErrors];
+
+export type ComplianceCustomerDataRequestResponses = {
+    /**
+     * Data request recorded — ops team notified
+     */
+    200: {
+        object: 'compliance_request';
+        requestId: string;
+        data: ComplianceAuditResponse;
+    };
+};
+
+export type ComplianceCustomerDataRequestResponse = ComplianceCustomerDataRequestResponses[keyof ComplianceCustomerDataRequestResponses];
